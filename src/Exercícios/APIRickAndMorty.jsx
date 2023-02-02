@@ -1,37 +1,39 @@
 import { useEffect, useState } from "react"
 
 function APIRickAndMorty() {
-  const [characters, setCharacters] = useState()
-  const [page, setPage]= useState(1)
+  // useState: lista de personagens
+  // useState: número da página, iniciar com o valor 1
+
   const fetchCharacters = async(page) => {
-    setCharacters()
-    console.log(page)
+    // setState: aqui colocar vazio o estado que contém a lista de personagens
     const requestAPI = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}&status=alive`, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    const info = (await requestAPI.json()).results
-    setCharacters(info)
-    console.log(info)
-  }
-  const handleClick = (next) => {
-    if(next){
-      setPage(page + 1)
-    } else {
-      if(page !== 0) setPage(page - 1) 
-    }
+    const informaçãoPersonagens = (await requestAPI.json()).results
+    // setState: aqui colocar as informações de Personagens
   }
 
-  useEffect(() => {
-    fetchCharacters(page)
-  },[page])
+  const handleClick = (next) => {
+    if(next){
+      //setState colocar aqui o valor da página + 1 
+    } else {
+      //setState colocar aqui o valor da página - 1 
+    } 
+  }
+
+  
+  // useEffect(() => {
+  //   colocar aqui dentro a função que faz a requisição de personagens
+  //   passando a variável que contém o número da página, vinda do estado
+  // },[ colocar aqui a variável que contém o número da página ])
 
   return(
     <div>
       {
-      characters && characters
-        .map((e, index) => {
+      // variavelQueContémAsInformaçõesDePersonagem && variavelQueContémAsInformaçõesDePersonagem.map(
+        (e, index) => {
           const {id, name, gender, species, status, type, image, location, origin} = e
           return(
             <div style={{display: 'flex', justifyContent: 'center'}}>

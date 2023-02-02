@@ -1,35 +1,45 @@
 import { useState } from "react"
 function Login() {
-  const corectLogin = {
-    username: 'aluno123', 
-    password: 'Senai2023'
-  }
-  const [formState, setFormState] = useState({
-    username:"",
-    password:""
-  })
+  // const corectLogin = {
+  //   username: 'aluno123', 
+  //   password: 'Senai2023'
+  // }
+  
+  //useState: Estado do formulário
 
   const changeHandle = ({target}) => {
-    setFormState({...formState, [target.id]: target.value})
+    //função para realizar a alteração de estado do formulário
   }
   
   const submitHandle = (event) => {
-    event.preventDefault()
-    if(formState.username !== corectLogin.username) alert('Usuário Incorreto')
-    else if(formState.password !== corectLogin.password) alert('Senha Incorreta')
-    else alert('login efetuado com sucesso')
+    //função preventDefault
+    // if(usuarioDoFormulario !== usuarioCorreto) {
+      // alert('Usuário Incorreto')
+    // }
+    // else if(senhaDoFormulario !== senhaCorreta) {
+      // alert('Senha Incorreta')
+    // }
+    // else {
+      // alerta de login bem sucedido
+    }
   }
 
   return (
-    <form onSubmit={submitHandle}>
+    <form onSubmit={
+      //função de submissão de formulário
+      }>
       <div>Login</div>
       <div>
       <label htmlFor="username">Username</label>
-      <input onChange={changeHandle} value={formState.username} id="username"></input>
+      <input onChange={
+        //função para fazer a alteração de estado 
+        } id="username"></input>
       </div>
       <div>
       <label htmlFor="password">Password</label>
-      <input type="password" onChange={changeHandle} value={formState.password }id="password"></input>
+      <input type="password" onChange={
+        //função para fazer a alteração de estado 
+        } id="password"></input>
       </div>
       <button>Submit</button>
     </form>

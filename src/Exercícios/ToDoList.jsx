@@ -2,55 +2,57 @@ import { useEffect, useState } from "react"
 
 function ToDoList() {
   const listadeAfazeres = [
-    {task: 'Olhar o email'},
-    {task: 'Dar água para as plantas'},
-    {task: 'Dar comida aos peixes'}
+    //itens da lista {},
+    //itens da lista {},
+    //itens da lista {},
   ]
   
-  const [list, setList] = useState(listadeAfazeres)
-  const [id, setId] = useState()
-  const [inputValue, setInputValue] = useState("")
+  // useState que contém a lista
+  // useState que contém o item selecionado da lista
+  // useState que contém o valor do input
 
   const addTask = (task) => {
-    setInputValue('')
-    setList([...list, {task: task}])
+    //funcao para adicionar itens na lista
+    // setInputValue('')
+    // setLista()
+    // dica: [...listadeAfazeres, novoitem]    
   }
 
   const removeTask = () => {
-    if(typeof id === 'number'){
-      const array = list.filter((e, i) => id !== i)
-      setId()
-      setList(array)
-    }
+    //funcao para remover itens na lista
+    // const array = list.filter((e, i) => id !== i)
+    // setItemSelecionado()
+    // setLista()
+
   }
 
   return(
     <>
     <div>
       <div>Minha lista de afazeres</div>
-      <input onChange={(event) => setInputValue(event.target.value)} value={inputValue}></input>
-      <button onClick={() => addTask(inputValue)}>Adicionar</button>
-      <button onClick={() => removeTask()}>Remover</button>
+      <input onChange={(event) => 
+      //setValorDoInput event.target.value
+      } value={inputValue}></input>
+      <button onClick={() => 
+        //funcao de adicionar itens na lista
+      }>Adicionar</button>
+      <button onClick={() => 
+        //funcao de remover itens da lista
+      }>Remover</button>
     </div>
     <div>
        {
-       list.map((e, i) => 
-        <li key={i} onClick={(event) => {
-          event.target.style.backgroundColor = "red"
-          setId(i)
-        }}>{e.task}</li>)
+        // lista.map((e, i) =>
+        //   <li key={i} onClick={(event) => {
+        //     setItemSelecionado()
+        //   }}>
+        //     {e.task}
+        //   </li>
+        // )
       }
     </div>
     </>
   )
 }
-
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-  <li key={number.toString()}>
-    {number}
-  </li>
-);
-
 
 export default ToDoList
