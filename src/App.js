@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import ToDoList from './Exercícios/ToDoList';
+import Login from './Exercícios/Login';
+import APIRickAndMorty from './Exercícios/APIRickAndMorty';
+import Contador from './Exercícios/Contador';
+import UseRefContador from './Exercícios/UseRefContador';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UseRefContador></UseRefContador>
     </div>
   );
 }
